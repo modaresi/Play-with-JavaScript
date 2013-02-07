@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>Play with JS</title>
+	<style type="text/css">
+	body {
+	background-color: darkgray;
+	}
+	.container {
+		width: 950px;
+		margin: 50px auto;
+	}
+	/*div.box {
+		width: 400px;
+		height: 300px;
+		margin: 0 auto;
+	}*/
+
+	div.box div {
+		width: 30px;
+		height: 30px;
+		-webkit-border-radius: 5px;
+		        border-radius: 5px;
+		background-color: #222;
+		float: left;
+		-webkit-transition: all 200ms;
+		
+	}
+	div.box div.New {
+		background-color: #651;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box">
+			<script type="text/javascript">
+				var max = 160;
+
+				for (var i = 0; i < max; i++) {
+					document.write('<div></div>')	
+				};
+
+				var divs = document.getElementsByClassName('box').item(0).getElementsByTagName('div');
+
+				function rand() {
+					var rnd = Math.floor(Math.random()*max);
+
+					if(divs.item(rnd).className == ''){
+						divs.item(rnd).className = 'New';
+					}
+				}
+
+				setInterval(rand,1000);	
+			</script>	
+		</div>
+	</div>
+</body>
+</html>
